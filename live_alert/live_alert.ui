@@ -163,16 +163,6 @@
      </property>
     </item>
    </widget>
-   <widget class="QLineEdit" name="le_var">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>540</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="lbl_url">
     <property name="geometry">
      <rect>
@@ -230,19 +220,6 @@
     </property>
     <property name="text">
      <string>Ajouter</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="test">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>540</y>
-      <width>141</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>test</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_suppr">

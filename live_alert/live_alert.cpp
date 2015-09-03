@@ -315,19 +315,7 @@ void live_alert::refresh_all()
     ui->btn_ajout->setEnabled(1);
 }
 
-void live_alert::on_refresh_all_clicked()
-{
-    act_row =0;
-    int nbr_stream = ui->tab->rowCount();
-    while (act_row < nbr_stream)
-    {
-        QString pseudo = lpseudos[act_row];
-        QString plateforme = lplateforme[act_row];
-        QString url = lurl[act_row];
-        check_site(pseudo, plateforme, url);
-        act_row++;
-    }
-}
+
 
 void live_alert::hideEvent(QHideEvent *event)
 {
