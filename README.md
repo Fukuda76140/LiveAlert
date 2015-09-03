@@ -2,4 +2,4 @@
 
 Notification de Stream Twitch et Daylimotion
 
-developpé via Qt et C++
+développé via Qt et C++
