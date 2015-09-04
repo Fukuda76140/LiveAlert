@@ -56,7 +56,7 @@ live_alert::live_alert(QWidget *parent) :
 
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(refresh_all()));
-    timer->start(10000);
+    timer->start(300000);
 }
 
 live_alert::~live_alert()

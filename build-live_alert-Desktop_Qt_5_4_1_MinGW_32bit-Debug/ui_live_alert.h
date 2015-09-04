@@ -38,7 +38,6 @@ public:
     QLineEdit *le_url;
     QPushButton *btn_ajout;
     QPushButton *btn_suppr;
-    QLabel *label_3;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *live_alert)
@@ -46,14 +45,14 @@ public:
         if (live_alert->objectName().isEmpty())
             live_alert->setObjectName(QStringLiteral("live_alert"));
         live_alert->setEnabled(true);
-        live_alert->resize(348, 611);
+        live_alert->resize(348, 510);
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(live_alert->sizePolicy().hasHeightForWidth());
         live_alert->setSizePolicy(sizePolicy);
-        live_alert->setMinimumSize(QSize(348, 611));
-        live_alert->setMaximumSize(QSize(348, 611));
+        live_alert->setMinimumSize(QSize(348, 510));
+        live_alert->setMaximumSize(QSize(348, 510));
         centralWidget = new QWidget(live_alert);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         tab = new QTableWidget(centralWidget);
@@ -67,7 +66,7 @@ public:
         tab->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         tab->setObjectName(QStringLiteral("tab"));
         tab->setEnabled(true);
-        tab->setGeometry(QRect(20, 20, 301, 231));
+        tab->setGeometry(QRect(10, 20, 331, 281));
         tab->setFocusPolicy(Qt::ClickFocus);
         tab->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         tab->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -83,19 +82,19 @@ public:
         tab->verticalHeader()->setHighlightSections(false);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(30, 340, 42, 16));
+        label->setGeometry(QRect(30, 320, 42, 16));
         le_pseudo = new QLineEdit(centralWidget);
         le_pseudo->setObjectName(QStringLiteral("le_pseudo"));
-        le_pseudo->setGeometry(QRect(115, 340, 201, 20));
+        le_pseudo->setGeometry(QRect(115, 320, 201, 20));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(30, 380, 61, 16));
+        label_2->setGeometry(QRect(30, 360, 61, 16));
         cb_plateforme = new QComboBox(centralWidget);
         cb_plateforme->setObjectName(QStringLiteral("cb_plateforme"));
-        cb_plateforme->setGeometry(QRect(120, 380, 201, 22));
+        cb_plateforme->setGeometry(QRect(120, 360, 201, 22));
         lbl_url = new QLabel(centralWidget);
         lbl_url->setObjectName(QStringLiteral("lbl_url"));
-        lbl_url->setGeometry(QRect(20, 420, 181, 21));
+        lbl_url->setGeometry(QRect(20, 400, 181, 21));
         QFont font;
         font.setPointSize(8);
         lbl_url->setFont(font);
@@ -103,18 +102,15 @@ public:
         le_url = new QLineEdit(centralWidget);
         le_url->setObjectName(QStringLiteral("le_url"));
         le_url->setEnabled(true);
-        le_url->setGeometry(QRect(210, 420, 111, 20));
+        le_url->setGeometry(QRect(210, 400, 111, 20));
         le_url->setAcceptDrops(true);
         le_url->setFrame(true);
         btn_ajout = new QPushButton(centralWidget);
         btn_ajout->setObjectName(QStringLiteral("btn_ajout"));
-        btn_ajout->setGeometry(QRect(120, 490, 201, 23));
+        btn_ajout->setGeometry(QRect(120, 440, 201, 23));
         btn_suppr = new QPushButton(centralWidget);
         btn_suppr->setObjectName(QStringLiteral("btn_suppr"));
-        btn_suppr->setGeometry(QRect(20, 490, 75, 23));
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(50, 260, 241, 16));
+        btn_suppr->setGeometry(QRect(20, 440, 75, 23));
         live_alert->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(live_alert);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -147,7 +143,6 @@ public:
         le_url->setPlaceholderText(QString());
         btn_ajout->setText(QApplication::translate("live_alert", "Ajouter", 0));
         btn_suppr->setText(QApplication::translate("live_alert", "Supprimer", 0));
-        label_3->setText(QApplication::translate("live_alert", "Faites un double clique gauche pour s\303\251lectionner", 0));
     } // retranslateUi
 
 };
