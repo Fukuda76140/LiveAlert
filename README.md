@@ -1,9 +1,8 @@
 # Stream_alert
 
-Notification de Stream Twitch et Daylimotion
+Notification de Stream Twitch et Daylimotion Game.
 
 Le logiciel et les DLL, se trouvent dans le dossier 'exe'
 
-/!\ N'oubliez pas de vider le fichier de conf /!\
 
-développé via Qt et C++
+Développé via Qt et C++
