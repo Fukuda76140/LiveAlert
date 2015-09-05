@@ -251,6 +251,10 @@ void live_alert::on_btn_suppr_clicked()
 
     int count_row = ui->tab->currentRow();
     ui->tab->removeRow(count_row);
+    lpseudos.removeAt(count_row);
+    lplateforme.removeAt(count_row);
+    lurl.removeAt(count_row);
+    letat.removeAt(count_row);
     remplir_tab();
 }
 
@@ -260,11 +264,6 @@ void live_alert::remplir_tab()
     // *******************************************
     // Remplissage du tableau avec le fichier .ini
     // *******************************************
-
-    lpseudos.clear();
-    lplateforme.clear();
-    lurl.clear();
-    letat.clear();
 
     while (ui->tab->rowCount() != 0)
     {

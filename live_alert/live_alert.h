@@ -38,7 +38,6 @@ private slots:
 
     void on_btn_suppr_clicked();
 
-    void on_refresh_all_clicked();
 
     void on_tab_clicked(const QModelIndex &index);
 
