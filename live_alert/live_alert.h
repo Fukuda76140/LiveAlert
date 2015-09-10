@@ -22,6 +22,7 @@ public:
     QStringList lplateforme;
     QStringList lurl;
     QStringList letat;
+    QStringList ljeux;
     int row; //<- ligne selectionnée
     int act_row; // <-- ligne actualisée
     ~live_alert();
@@ -40,6 +41,7 @@ private slots:
 
 
     void on_tab_clicked(const QModelIndex &index);
+
 
 private:
     Ui::live_alert *ui;

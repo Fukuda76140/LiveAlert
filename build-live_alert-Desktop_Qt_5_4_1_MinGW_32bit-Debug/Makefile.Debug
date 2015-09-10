@@ -254,6 +254,9 @@ debug/moc_live_alert.cpp: C:/Qt/5.4/mingw491_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QSystemTrayIcon \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qsystemtrayicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/QHideEvent \
 		../live_alert/live_alert.h
 	C:\Qt\5.4\mingw491_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.4/mingw491_32/mkspecs/win32-g++ -IH:/Dev/live_alert -IC:/Qt/5.4/mingw491_32/include -IC:/Qt/5.4/mingw491_32/include/QtWidgets -IC:/Qt/5.4/mingw491_32/include/QtGui -IC:/Qt/5.4/mingw491_32/include/QtNetwork -IC:/Qt/5.4/mingw491_32/include/QtCore -I. ..\live_alert\live_alert.h -o debug\moc_live_alert.cpp
 
@@ -424,6 +427,9 @@ debug/main.o: ../live_alert/main.cpp ../live_alert/live_alert.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QSystemTrayIcon \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qsystemtrayicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/QHideEvent \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
@@ -580,48 +586,16 @@ debug/live_alert.o: ../live_alert/live_alert.cpp ../live_alert/live_alert.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QSystemTrayIcon \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qsystemtrayicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/QHideEvent \
 		ui_live_alert.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QComboBox \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qcombobox.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QLabel \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlabel.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QLineEdit \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlineedit.h \
-		C:/Qt/5.4/mingw491_32/include/QtGui/qtextcursor.h \
-		C:/Qt/5.4/mingw491_32/include/QtGui/qtextformat.h \
-		C:/Qt/5.4/mingw491_32/include/QtGui/qpen.h \
-		C:/Qt/5.4/mingw491_32/include/QtGui/qtextoption.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QMenuBar \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qmenu.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QPushButton \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QStatusBar \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QTableWidget \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QToolBar \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtoolbar.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QWidget \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/QMessageBox \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qmessagebox.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdialog.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QSettings \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qsettings.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QTableWidget \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QJsonDocument \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qjsondocument.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qjsonvalue.h \
@@ -630,7 +604,16 @@ debug/live_alert.o: ../live_alert/live_alert.cpp ../live_alert/live_alert.h \
 		C:/Qt/5.4/mingw491_32/include/QtNetwork/QSslSocket \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QTimer \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qtimer.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qbasictimer.h
+		C:/Qt/5.4/mingw491_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QDebug \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QMenu \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qmenu.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtGui/QDesktopServices \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qdesktopservices.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qstandardpaths.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\live_alert.o ..\live_alert\live_alert.cpp
 
 debug/moc_live_alert.o: debug/moc_live_alert.cpp 

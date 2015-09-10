@@ -7,6 +7,7 @@
 #include "QUrl"
 #include "QJsonDocument"
 #include "QJsonObject"
+#include "QJsonArray"
 #include "QSslSocket"
 #include "QTimer"
 #include "QSystemTrayIcon"
@@ -22,6 +23,12 @@ live_alert::live_alert(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->le_url->hide();
+
+    // Size colonnes tableau
+    ui->tab->setColumnWidth(0,100);
+    ui->tab->setColumnWidth(1,90);
+    ui->tab->setColumnWidth(2,90);
+    ui->tab->setColumnWidth(3,210);
 
 
     // Création d'une icone systray
@@ -47,8 +54,6 @@ live_alert::live_alert(QWidget *parent) :
 
     connect(stray_show, SIGNAL(triggered()), this, SLOT(stray_show()));
     connect(stray_quitter, SIGNAL(triggered()), this, SLOT(stray_quitter()));
-
-
 
     remplir_tab();
 
@@ -77,12 +82,6 @@ void live_alert::on_cb_plateforme_activated(const QString &arg1) // selection pl
     {
         ui->le_url->show();
         ui->lbl_url->setText("http://www.twitch.tv/");
-        ui->le_url->setPlaceholderText("xxxx");
-    }
-    else if (arg1 == "Hitbox")
-    {
-        ui->le_url->show();
-        ui->lbl_url->setText("http://www.hitbox.tv/");
         ui->le_url->setPlaceholderText("xxxx");
     }
     else
@@ -124,6 +123,7 @@ void live_alert::on_btn_ajout_clicked()
             lplateforme << ui->cb_plateforme->currentText();
             lurl << ui->le_url->text();
             letat << "Hors ligne";
+            ljeux << "";
     }
 
     else
@@ -184,25 +184,45 @@ void live_alert::live(QString html, QString plateforme)
 
         QJsonObject json = doc.object();
 
+        // Récupère l'état du stream _total = 1 quand online
+
         QVariantMap maps = json.toVariantMap();
         QString etat = maps["_total"].toString();
 
 
         if(etat == "1")
         {
-            if (letat[act_row]!= "En ligne !")
+
+            // Récupération du jeux
+           QJsonValue value = json.value("streams");
+
+           QJsonArray array = value.toArray();
+           QJsonValue streams = array[0];
+           QVariant vmap = streams.toVariant();
+           QVariantMap game = vmap.toMap();
+           QString jeux = game["game"].toString();
+
+            if (letat[act_row]!= "En ligne !") // Si le stream était offline on popup !
             {
                 QString pseudo_live = lpseudos[act_row];
-                QString url_live = "http://www.twitch.tv/"+lurl[act_row];
                 letat[act_row] = "En ligne !";
-                notifyIcon->showMessage(pseudo_live+" est en live !", url_live);
+                notifyIcon->showMessage(pseudo_live+" est en live !", "joue à " +jeux);
+                ljeux[act_row] = jeux;
             }
 
+            if ((letat[act_row] == "En ligne !") && (ljeux[act_row] != jeux))
+            {
+                notifyIcon->showMessage(lpseudos[act_row]+" joue à " +jeux,"");
+                ljeux[act_row] = jeux;
+            }
             ui->tab->setItem(act_row,2,new QTableWidgetItem("En ligne !"));
+            ui->tab->setItem(act_row,3,new QTableWidgetItem(jeux));
         }
         else
         {
             ui->tab->setItem(act_row,2,new QTableWidgetItem("Hors ligne"));
+            ui->tab->setItem(act_row,3,new QTableWidgetItem(""));
+            ljeux[act_row] = "";
         }
     }
 
@@ -245,6 +265,9 @@ void live_alert::live(QString html, QString plateforme)
 
 void live_alert::on_btn_suppr_clicked()
 {
+
+    QModelIndexList index = ui->tab->selectionModel()->selectedRows(0);
+    //QModelIndex i = index.size();
     QString pseudo = ui->le_pseudo->text();
     QSettings settings("config.ini", QSettings::IniFormat);
     settings.remove(pseudo);
@@ -255,6 +278,7 @@ void live_alert::on_btn_suppr_clicked()
     lplateforme.removeAt(count_row);
     lurl.removeAt(count_row);
     letat.removeAt(count_row);
+    ljeux.removeAt(count_row);
     remplir_tab();
 }
 
@@ -264,7 +288,9 @@ void live_alert::remplir_tab()
     // *******************************************
     // Remplissage du tableau avec le fichier .ini
     // *******************************************
-
+    lurl.clear();
+    lplateforme.clear();
+    ljeux.clear();
     while (ui->tab->rowCount() != 0)
     {
         ui->tab->removeRow(0);
@@ -284,6 +310,7 @@ void live_alert::remplir_tab()
          lplateforme << settings.value(pseudo+"/plateforme").toString();
          lurl <<  settings.value(pseudo+"/URL").toString();
          letat << "Hors ligne";
+         ljeux << "";
          ui->tab->setItem(x,0,new QTableWidgetItem(pseudo));
          ui->tab->setItem(x,1,new QTableWidgetItem(plateforme));
 
@@ -365,3 +392,4 @@ void live_alert::on_tab_activated(const QModelIndex &index)
     QDesktopServices::openUrl(QUrl(url, QUrl::TolerantMode));
 
 }
+
